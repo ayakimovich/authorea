@@ -1,6 +1,5 @@
 abstract.tex
 sectionMotivation_an.tex
-figures/fig2_conversion_strategy/fig2_conversion_strategy.png
 sectionImpact_label.tex
 sectionConclusions_l.tex
 sectionAcknowledgeme.tex
