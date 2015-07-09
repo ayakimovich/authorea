@@ -3,7 +3,7 @@
 
 \textbf{Introduce the scientific background and the motivation for developing the software.}
 
-Conversion of the language of mathematics into the language of machine instructions, often defined as scientific and technical computing has been pioneered by the project FORTRAN\cite{Backus:1957:FAC}. Lergely building upon the success of its predecessor, Matlab/Octave is a scientific and technical computing programming language widely used through academic community. MATLAB has been introduced in late 1970s as an open source programming language for technical computing and later commercialized by Mathworks Inc. Being product of Mathworks Inc., MATLAB became popular among primarily engineers providing a flexible solutions for linear algebra, differential equations and a number of other problems engineers deal with on a daily basis \cite{moore2014matlab}. Itroduced in the end of 1980s its syntaxial sibling, GNU Octave, offered an open source alternative to the commercial product of Mathworks \cite{eaton1997gnu}.
+Conversion of the language of mathematics into the language of machine instructions, often defined as scientific and technical computing has been pioneered by the project FORTRAN \cite{Backus:1957:FAC}. Lergely building upon the success of its predecessor, Matlab/Octave is a scientific and technical computing programming language widely used through academic community. MATLAB has been introduced in late 1970s as an open source programming language for technical computing and later commercialized by Mathworks Inc. Being product of Mathworks Inc., MATLAB became popular among primarily engineers providing a flexible solutions for linear algebra, differential equations and a number of other problems engineers deal with on a daily basis \cite{moore2014matlab}. Itroduced in the end of 1980s its syntaxial sibling, GNU Octave, offered an open source alternative to the commercial product of Mathworks \cite{eaton1997gnu}.
 
 Yet more than a tool for engineers, in the last three decades MATLAB/Octave has become a \textit{de facto} default tool for developing scientific code, often used to solve problems it was not initially designed for. This, in turn, lead to an accumulation of prototype-like scientific software solutions unable to scale up to the promise and, thus, limiting the research work. To address this, in recent years a number of new programming languages and frameworks has been proposed including SciPy for Python \cite{jones2001open, Olivier_2002}, SCILAB \cite{Campbell_2009} and others. While some projects managed to successfully undertake the effort of rewriting their research software into one of these new frameworks \cite{17076895, 21349861}, for many this represents a major problem due to programming language differences.
 
@@ -11,7 +11,7 @@ A newly introduced open source dynamic high level technical programing language 
 
 \textbf{Explain why the software is important, and describe the exact (scientific) problem(s) it solves.}
 
-Here we present 
+Here we present MatlabCompat.jl a Julia language library aimed at simplifying the conversion of MATLAB/Octave based research software to the novel Julia technical computing language by providing one way compatibility and MATLLAB/Octave to Julia code parsing modules. Using this library research labs with limited software development and computational resources can convert their MATLAB/Octave code into Julia in a much easier way. This step may, in turn, improve usability, performance and prolong the lifetime of their software tools. The library is written in native Julia alone, available on Github under MIT open source license and is a part of Julia package repository.
 
 
 \textbf{Indicate in what way the software has contributed (or how it will contribute in the future) to the process of scientific discovery; if available, this is to be supported by citing a research paper using the software.}
@@ -39,4 +39,5 @@ Here we present
     
     
     
+  
   
