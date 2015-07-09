@@ -7,23 +7,35 @@ Conversion of the language of mathematics into the language of machine instructi
 
 Yet more than a tool for engineers, in the last three decades MATLAB/Octave has become a \textit{de facto} default tool for developing scientific code, often used to solve problems it was not initially designed for. This, in turn, lead to an accumulation of prototype-like scientific software solutions unable to scale up to the promise and, thus, limiting the research work. To address this, in recent years a number of new programming languages and frameworks has been proposed including SciPy for Python \cite{jones2001open, Olivier_2002}, SCILAB \cite{Campbell_2009} and others. While some projects managed to successfully undertake the effort of rewriting their research software into one of these new frameworks \cite{17076895, 21349861}, for many this represents a major problem due to programming language differences.
 
-A newly introduced open source dynamic high level technical programing language Julia aims at shattering the paradigm that high level prototype code has to be inherently inefficient \cite{bezanson2012julia, bezanson2014julia}.  Unlike other high level technical computing languages Julia offers abstract types, multiple dispatch of methods allowing reusing them dynamically, and other attractive features of a modern programming language. The source code written in Julia is executed using just-in-time (JIT) compilation based on its low level virtual machine (LLVM) may deliver performance matching performance of the iconic C language \cite{bezanson2012julia, bezanson2014julia}. Much like \textit{Esperanto} of technical computing the syntax of Julia combines to a larger extend syntaxes of MATLAB/Octave, Python, R, Perl and many other languages. However as close as it may seem to MATLAB/Octave the code written in MATLB/Octave requires significant modifications to be understood by Julia.
+A newly introduced open source dynamic high level technical programing language Julia aims at shattering the paradigm that high level prototype code has to be inherently inefficient \cite{bezanson2012julia, bezanson2014julia}.  Unlike other high level technical computing languages Julia offers abstract types, multiple dispatch of methods allowing reusing them dynamically, and other attractive features of a modern programming language. The source code written in Julia is executed using just-in-time (JIT) compilation based on its low level virtual machine (LLVM) may deliver performance matching performance of the iconic C language \cite{bezanson2012julia, bezanson2014julia}. Similar to \textit{Esperanto} of human languages, the syntax of Julia combines to a larger extend syntaxes of MATLAB/Octave, Python, R, Perl and many other languages. However as close as it may seem to MATLAB/Octave the code written in MATLAB/Octave requires significant modifications to be understood by Julia.
 
 \textbf{Explain why the software is important, and describe the exact (scientific) problem(s) it solves.}
 
-Here we present MatlabCompat.jl a Julia language library aimed at simplifying the conversion of MATLAB/Octave based research software to the novel Julia technical computing language by providing one way compatibility and MATLLAB/Octave to Julia code parsing modules. Using this library research labs with limited software development and computational resources can convert their MATLAB/Octave code into Julia in a much easier way. This step may, in turn, improve usability, performance and prolong the lifetime of their software tools. The library is written in native Julia alone, available on Github under MIT open source license and is a part of Julia package repository.
-
-To illustrate how MatlabCompat.jl helps solving typical scientific problem of experimental results quantification we provide a typical use case from image analysis of micrographs obtained with an automated epifluorescent screening microscope (based on published data \cite{22787215}).
+Here we present MatlabCompat.jl a Julia language library aimed at simplifying the conversion of MATLAB/Octave based research software to the novel Julia technical computing language by providing one way compatibility and MATLLAB/Octave to Julia code parsing modules. Using this library research groups with limited software development and computational resources can convert their MATLAB/Octave code into Julia in a much easier way. This step may, in turn, improve usability, performance and prolong the lifetime of their software tools. The library is written in native Julia alone, available on Github under MIT open source license and is a part of Julia package repository.
 
 \textbf{Indicate in what way the software has contributed (or how it will contribute in the future) to the process of scientific discovery; if available, this is to be supported by citing a research paper using the software.}
 
+Matlab/Octave is widely used to develop complex research software, e.g. in the filed of image analysis \cite{Kiss_2014, 17076895}. Beyond image analysis MatlabCompat.jl spans already at its early stage of development a handful of functions including input/output, working with strings, linear algebra and others providing researchers with an easy-to-reach Matlab/Octave alternative. MatlabCompat.jl allows researchers to first easily convert their Matlab/Octave code into Julia and then enrich their code using Julia language. The added values of such code conversion efforts include using features like dynamic types, dataframes, as well as, allowing for additional performance optimization.
+
+To illustrate how MatlabCompat.jl helps solving typical scientific problem of experimental results quantification we provide a typical use case from image analysis of micrographs obtained with an automated epifluorescent screening microscope (based on published data \cite{22787215}). E.g. to quantify fluorescent micrographs it is common to perform to separate background (dark) pixels from foreground (bright) pixels based on a threshold value of gray values determined either manually or using e.g. Otsu algorithm \cite{otsu1975threshold}. Together with other relevant functions, we have implemented the latter in Julia for a use case identical to a typical MATLAB/Octave use case, described in detail below.
 
 \textbf{Provide a description of the experimental setting (how does the user use the software?).}
 
+To use MatlabCompat.jl upon \href{http://julialang.org/downloads/}{download} and installation of Julia distributive for the respective platform, the user has to add the package by invoking:
+
+\verb|Pkg.add("MatlabCompat")|
+
+and subsequently before calling specific functions from our package:
+
+\verb|using MatlabCompat|
+
+Basic parsing of MATLAB/Octave code and its preconversion to Julia code is provided by the function \textit{rossetta()} using following syntax:
+
+\verb|rossetta(path/to/your/Mfile.m, path/to/new/jlfile.jl)|
 
 \textbf{Introduce related work in literature (cite or list algorithms used, other software etc.).}
 
-Much like Julia language itself MatlabCompat.jl is fully Github based and a work in progress inviting everyone to collaborate. It is set up as a Github organization, which is open for new members and the library source code is open for Github based pull requests. The longterm goal of the library is to allow effortless compatibility of Matlab/Octave research code to Julia. We have thus far
+Much like Julia language itself MatlabCompat.jl is fully Github based and a work in progress inviting everyone to collaborate. It is set up as a Github organization, which is open for new members and the library source code is open for Github based pull requests. The longterm goal of the library is to allow effortless compatibility of Matlab/Octave research code to Julia.
     
     
     
@@ -41,6 +53,7 @@ Much like Julia language itself MatlabCompat.jl is fully Github based and a work
     
     
     
+  
   
   
   
