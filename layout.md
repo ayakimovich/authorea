@@ -1,6 +1,5 @@
 abstract.tex
 sectionMotivation_an.tex
-sectionSoftware_desc.tex
 figures/fig1_library_scheme1/fig1_library_scheme1.png
 figures/fig2_conversion_strategy/fig2_conversion_strategy.png
 figures/fig1_library_scheme/sectionIllustrative_.tex
