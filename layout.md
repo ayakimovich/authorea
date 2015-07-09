@@ -1,6 +1,7 @@
 abstract.tex
 sectionMotivation_an.tex
 sectionSoftware_desc.tex
+figures/fig1_library_scheme/fig1_library_scheme.svg
 sectionIllustrative_.tex
 sectionImpact_label.tex
 sectionConclusions_l.tex
