@@ -1,8 +1,8 @@
 abstract.tex
 sectionMotivation_an.tex
+figures/fig2_conversion_strategy/fig2_conversion_strategy.png
 sectionImpact_label.tex
 sectionConclusions_l.tex
 sectionAcknowledgeme.tex
 section_Required_Metadata_label_section__.tex
-figures/fig2_conversion_strategy/fig2_conversion_strategy.png
 figures/fig1_library_scheme1/fig1_library_scheme1.png
