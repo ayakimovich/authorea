@@ -3,6 +3,7 @@ sectionMotivation_an.tex
 section_Software_description_label_textbf__.tex
 figures/fig1_conversion_strategy/fig1_conversion_strategy.png
 figures/fig2_library_scheme/fig2_library_scheme.png
+figures/fig1_conversion_strategy1/fig1_conversion_strategy1.png
 section_Illustrative_Examples_label_Provide__.tex
 sectionImpact_label.tex
 sectionConclusions_l.tex
