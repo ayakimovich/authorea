@@ -21,6 +21,8 @@ To illustrate how MatlabCompat.jl helps solving typical scientific problem of ex
 
 \textbf{Provide a description of the experimental setting (how does the user use the software?).}
 
+Beyond image analysis, the range of the settings where MatlabCompat.jl can be used is as broad as scientific and technical computing themselves. It ranges from data acquisition, mining and analysis to modeling, simulation and prediction. It aims at providing added value to existing Matlab/Octave solutions by assisting in code conversion into Julia - a language with broader possibilities and prospective performance optimization.
+
 To use MatlabCompat.jl upon \href{http://julialang.org/downloads/}{download} and installation of Julia distributive for the respective platform, the user has to add the package by invoking:
 
 \verb|Pkg.add("MatlabCompat")|
@@ -35,7 +37,7 @@ Basic parsing of MATLAB/Octave code and its preconversion to Julia code is provi
 
 \textbf{Introduce related work in literature (cite or list algorithms used, other software etc.).}
 
-Much like Julia language itself MatlabCompat.jl is fully Github based and a work in progress inviting everyone to collaborate. It is set up as a Github organization, which is open for new members and the library source code is open for Github based pull requests. The longterm goal of the library is to allow effortless compatibility of Matlab/Octave research code to Julia.
+One or two-way compatibility between different programming languages can be achieved either by manual or automatic translation, application program interface (API) based integration or, in cases of exceptional syntax similarity, by compatibility libraries. Multiple efforts on automatic translation of programming languages date to as early as 1960s \cite{Ledley_1962, irons1961syntax}. API based integrations exists between and for multiple programming languages and platforms, including e.g. Python \cite{autin2012upy}, MATLAB \cite{Bornstein_2008}. Julia languages has multiple APIs based integrations working and in development. Finally, compatibility libraries a typically written in the destination language and are a very common way to translate not just code but also principles and practices well established in one language to another language, like e.g. Matlab plotting library for Python \cite{Hunter_2007, barrett2005matplotlib}
     
     
     
@@ -53,6 +55,7 @@ Much like Julia language itself MatlabCompat.jl is fully Github based and a work
     
     
     
+  
   
   
   
