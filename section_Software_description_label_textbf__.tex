@@ -3,6 +3,8 @@
 
 \textbf{Describe the software in as much as is necessary to establish a vocabulary needed to explain its impact. }
 
+MatlabCompat.jl is a Julia language package that helps converting your code in Matlab/Octave into Julia. Much like Julia language itself MatlabCompat.jl is fully Github based and a work in progress inviting everyone to collaborate. It is set up as a Github organization, which is open for new members and the library source code is open for Github based pull requests. The longterm goal of the library is to allow effortless compatibility of Matlab/Octave research code to Julia.
+
 A typical code conversion strategies for a high level programming languages involve either adaptation of the syntax of the source language to the syntax of the destination language or usage of the library translating the code of the source language "as is" in the environment of the destination language (\textbf{Fig. 1}). While first strategy is always available for a developer, MatlabCompat.jl makes the second strategies possible yet not exclusive.
 
 More often than not certain code adaptation may become necessary or desired for several reasons. First, being constantly under dynamic development both MatlabCompat.jl and Julia language itself might either not cover the necessary functionality of Matlab/Octave or this functionality might altered/limited for syntaxial and other reasons. Second, pursuing exclusively strategy 2 developers risk creating non-optimal \textit{"stab"} Julia code. To avoid that MatlabCompat.jl aims at providing minimal Julia-invasive compatibility of Matlab/Octave code, where developers get fully exposed to Julia being able to utilize all of its features. Therefore developers are suggested to pursue hybrid strategy requiring code refactoring to make their Matlab/Octave work in Julia yet minimizing the effort needed to achieve it.
@@ -21,6 +23,7 @@ More often than not certain code adaptation may become necessary or desired for 
 
 \subsection{Sample code snippets analysis (optional)}
 \label{} 
+  
   
   
   
