@@ -1,6 +1,6 @@
 abstract.tex
 sectionMotivation_an.tex
-section_Software_description_label_textbf__.tex
+section_Software_description_label_Description__.tex
 figures/fig1_conversion_strategy1/fig1_conversion_strategy1.png
 figures/fig2_library_scheme/fig2_library_scheme.png
 section_Illustrative_Examples_label_Provide__.tex
