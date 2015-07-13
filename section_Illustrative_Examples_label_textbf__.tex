@@ -25,15 +25,43 @@ To demonstrate the functionalities of the MatlbaCompat.jl library we have create
 
 \verb|toc()|
 
-To ensure that the same program can be understood by Julia using MatlabCompat.jl package either a parsing step or minimal changes to the code are necessary. These changes include basic syntax adaptation like substitution of single quotes symbol (') by double quotes ("), substitution of commentary symbol percent (\%) by hash (#) and addition of the lines initiating packages used including at least MatlabCompat. This is basic parsing is provided by the function "rossetta()", like in the example above:
+To ensure that the same program can be understood by Julia using MatlabCompat.jl package either a parsing step or minimal changes to the code are necessary. These changes include basic syntax adaptation like substitution of single quotes symbol (') by double quotes ("), substitution of commentary symbol percent (\%) by hash (#) and addition of the lines initiating packages used including at least MatlabCompat. This is basic parsing is provided by the function \textit{"rossetta()"}, like in the example below (identical to the example mentioned above):
 
-using MatlabCompat
+\verb|using MatlabCompat|
 
-rossetta(janus.m, janus.jl)
+\verb|rossetta(janus.m, janus.jl)|
 
+In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.m} the function \textit{"rossetta()"} generates immediately Julia interpretable code:
+
+\verb|using MatlabCompat|
+
+\verb|using MatlabCompat.ImageTools|
+
+\verb|using MatlabCompat.MathTools|
+
+\verb|tic()|
+
+\verb|img = imread("http://matlabcompat.github.io/img/example.tif"); # read the remote image|
+
+\verb|threshold = graythresh(img); # compute graysacale threshold using Otsu algorithm|
+
+\verb|imgbw = im2bw(img, threshold); # create a binary image based on the graysacel image|
+
+\verb|imshow(imgbw); # display the resulting binary image|
+
+\verb|labledbw = bwlabel(imgbw, 4); # lable each connected object in the image|
+
+n\verb|umberOfCells = max(reshape(labledbw, 1,numel(labledbw))); # count cells|
+
+\verb|disp(strcat("number of objects:", num2str(numberOfCells)));|
+
+\verb|imshow(label2rgb(labledbw))# display the number of objects|
+
+\verb|toc()|
 
 Optional: you may include one explanatory video that will appear next to your article, in the right hand side panel. (Please upload any video as a single supplementary file with your article. Only one MP4 formatted, with 50MB maximum size, video is possible per article. Recommended video dimensions are 640 x 480 at a maximum of 30 frames/second. Prior to submission please test and validate your .mp4 file \href{http://elsevier-apps.sciverse.com/GadgetVideoPodcastPlayerWeb/verification}{here}. This tool will display your video exactly in the same way as it will appear on ScienceDirect.).
 
+  
   
   
   
