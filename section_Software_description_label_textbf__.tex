@@ -18,23 +18,28 @@ Following the minimal Julia invasivity concept mentioned, MatlabCompat.jl has a 
 
 \verb|using MatlabCompat|
 
-Typically for other Julia packages invoking using with a package would export all the functions of the package into the scope. Yet in case of MatlabCompat.jl to avoid namespace conflicts with \textit{"Base"} package, invoking the line above for MatlabCompat package would export into the scope only those functions names of which are not conflicting with \textit{"Base"} package. To substitute the respective function from the \textit{"Base"} package by a function from MatlabCompat.jl package wit the same name (for Matlab/Octave compatibility reasons) a user would have to explicitly export the respective subpackage of MatlabCompat. For example to use max() function from MatlabCompat.jl package rather than from \textit{"Base"} package:
+The namespace conflicts between Julia and Matlab/Octave are partially inevitable given the syntaxial closeness of Julia and Matlab/Octave. E.g. function \textit{max()} in Matlab/Octave is closer to function \textit{maximum()} in Julia, while \textit{max()} function name is taken in Julia. To address this type of issues Julia language avoids global declarations and uses local scopes. Typically for other Julia packages invoking using with a package would export all the functions of the package into the scope. Yet in case of MatlabCompat.jl to avoid namespace conflicts with \textit{"Base"} package, invoking the line above for MatlabCompat package would export into the scope only those functions names of which are not conflicting with \textit{"Base"} package. To substitute the respective function from the \textit{"Base"} package by a function from MatlabCompat.jl package wit the same name (for Matlab/Octave compatibility reasons) a user would have to explicitly export the respective module of MatlabCompat. For example to use max() function from MatlabCompat.jl package rather than from \textit{"Base"} package:
 
 \verb|using MatlabCompat, MatlabCompat.MathTools|
+
 \verb|max([1 2 3])|
+
 \verb|3|
 
 
-The namespace conflicts between Julia and Matlab/Octave are partially inevitable given the syntaxial closeness of Julia and Matlab/Octave. E.g. function \textit{max()} in Matlab/Octave is closer to function \textit{maximum()} in Julia, while \textit{max()} function name is taken in Julia. To address this type of issues Julia language avoids global declarations and uses local scopes. In MatlabCompat.jl
+MatlabCompat.jl follows a rather simple modules organization convention. Namely, all the modules are name with function purposes based self-explanatory names in \textit{"CamelCase"} with capitalized first letter. Modules may contained submodules if necessary. All functions modules contain should be either aliases (wrappers) or reimplementations of Matlab/Octave functions named the same way. The only module representing an exeption in this case is module \textit{"Support"}, which contains functions, not having an analogue neither in Matlab/Octave nor in Julia languages, necessary for other functions in the package.
 
 \subsection{Software Functionalities}
 \label{} 
 
 \textbf{Present the major functionalities of the software.}
 
+Currently the major functionalities of the MatlabCompat.jl include syntax aliases or reimplementations of Matlab/Octave functions organized in modules with self-explanatory naming: \textit{"StringTools"}, \textit{"MathTools"}, \textit{"ImageTools"}, \textit{"Support"} (see \textbf{Fig. 2} and \href{http://http://matlabcompat.github.io/help.html}{help}). Like the Julia language, MatlabCompat.jl is in an active development and is actively receiving new contributions, including new modules. For an up-to-date overview of functions provided by different modules of the package please see the http://http://matlabcompat.github.io/help.html}{help}. For pragmatic reasons the Matlab/Octave to Julia compatibility functions covered by MatlabCompat.jl at the current stage are strongly shifted towards image analysis, including e.g. \textit{graythresh()} for Otsu thresholding,  
+
 
 \subsection{Sample code snippets analysis (optional)}
 \label{} 
+  
   
   
   
