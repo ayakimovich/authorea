@@ -1,5 +1,5 @@
 \section{Software description}
-\label{} 
+\label{Description} 
 
 \textbf{Describe the software in as much as is necessary to establish a vocabulary needed to explain its impact. }
 
@@ -10,7 +10,7 @@ A typical code conversion strategies for a high level programming languages invo
 More often than not, certain code adaptation may become necessary or desired for several reasons. First, being constantly under dynamic development both MatlabCompat.jl and Julia language itself might either not cover the necessary functionality of Matlab/Octave or this functionality might altered/limited for syntaxial and other reasons. Second, pursuing exclusively strategy 2 developers risk creating non-optimal \textit{"stab"} Julia code. To avoid that MatlabCompat.jl aims at providing minimal Julia-invasive compatibility of Matlab/Octave code, where developers get fully exposed to Julia being able to utilize all of its features. Therefore developers are suggested to pursue hybrid strategy requiring code refactoring to make their Matlab/Octave work in Julia yet minimizing the effort needed to achieve it.
 
 \subsection{Software Architecture}
-\label{} 
+\label{Architecture} 
 
 \textbf{Give a short overview of the overall software architecture; provide a pictorial component overview or similar (if possible). If necessary provide implementation details.}
 
@@ -30,14 +30,23 @@ The namespace conflicts between Julia and Matlab/Octave are partially inevitable
 MatlabCompat.jl follows a rather simple modules organization convention. Namely, all the modules are name with function purposes based self-explanatory names in \textit{"CamelCase"} with capitalized first letter. Modules may contained submodules if necessary. All functions modules contain should be either aliases (wrappers) or reimplementations of Matlab/Octave functions named the same way. The only module representing an exeption in this case is module \textit{"Support"}, which contains functions, not having an analogue neither in Matlab/Octave nor in Julia languages, necessary for other functions in the package.
 
 \subsection{Software Functionalities}
-\label{} 
+\label{Functionalities} 
 
 \textbf{Present the major functionalities of the software.}
 
-Currently the major functionalities of the MatlabCompat.jl include syntax aliases or reimplementations of Matlab/Octave functions organized in modules with self-explanatory naming: \textit{"StringTools"}, \textit{"MathTools"}, \textit{"ImageTools"}, \textit{"Support"} (see \textbf{Fig. 2} and \href{http://matlabcompat.github.io/help.html}{help}). Like the Julia language, MatlabCompat.jl is in an active development and is actively receiving new contributions, including new modules. For an up-to-date overview of functions provided by different modules of the package please see the \href{http://matlabcompat.github.io/help.html}{help}. For pragmatic reasons the Matlab/Octave to Julia compatibility functions covered by MatlabCompat.jl at the current stage are strongly shifted towards image analysis and processing functions, including e.g. \textit{graythresh()} for Otsu thresholding \cite{otsu1975threshold},
+Currently the major functionalities of the MatlabCompat.jl include syntax aliases or reimplementations of Matlab/Octave functions organized in modules with self-explanatory naming: \textit{"StringTools"}, \textit{"MathTools"}, \textit{"ImageTools"}, \textit{"Support"} (see \textbf{Fig. 2} and \href{http://matlabcompat.github.io/help.html}{help}). Like the Julia language, MatlabCompat.jl is in an active development and is actively receiving new contributions, including new modules. For an up-to-date overview of functions provided by different modules of the package please see the \href{http://matlabcompat.github.io/help.html}{help}. For pragmatic reasons the Matlab/Octave to Julia compatibility functions covered by MatlabCompat.jl at the current stage are strongly shifted towards image analysis and processing functions, including e.g. \textit{graythresh()} for Otsu thresholding \cite{otsu1975threshold}, \textit{bwlabel()} for labeling and subsequent counting of e.g. bright objects over dark background (discussed in detail below) and other functions.
 
 \subsection{Sample code snippets analysis (optional)}
-\label{}
+\label{Snippets}
+
+An example of functionality provided by the MatlabCompat.jl package standing out, but worth mentioning is covered by function \textit{rossetta()} (\textit{"Support" module}). This function is aimed to be used as the entry point for Matlab/Octave-to-Julia conversion of your code. It is aimed to parse m-files (first argument) making basic syntax changes required for the code compatibility to Julia and then save the jl-file (second argument) to the specified path:
+
+\verb|using MatlabCompat|
+
+\verb|rossetta(janus.m, janus.jl)|
+
+You can test the functionality of this code using the minimalistic \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.jl} program discussed below.
+  
   
   
   
