@@ -4,20 +4,30 @@
 \textbf{Provide at least one illustrative example to demonstrate the major functions.}
 
 To demonstrate the functionalities of the MatlbaCompat.jl library we have created \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.m} - a minimalistic image analysis program in Matlab/Octave:
+
 \verb|tic()|
 \verb|img = imread('http://matlabcompat.github.io/img/example.tif'); % read the remote image|
+
 \verb|threshold = graythresh(img); % compute graysacale threshold using Otsu algorithm|
+
 \verb|imgbw = im2bw(img, threshold); % create a binary image based on the graysacel image|
+
 \verb|imshow(imgbw); % display the resulting binary image|
+
 \verb|labeledbw = bwlabel(imgbw, 4); % lable each connected object in the image|
+
 \verb|numberOfCells = max(reshape(labeledbw, 1,numel(labeledbw))); % count cells|
+
 \verb|disp(strcat('number of objects:', num2str(numberOfCells)));% display the number of objects|
+
 \verb|imshow(label2rgb(labeledbw))|
+
 \verb|toc()|
 
 
 Optional: you may include one explanatory video that will appear next to your article, in the right hand side panel. (Please upload any video as a single supplementary file with your article. Only one MP4 formatted, with 50MB maximum size, video is possible per article. Recommended video dimensions are 640 x 480 at a maximum of 30 frames/second. Prior to submission please test and validate your .mp4 file \href{http://elsevier-apps.sciverse.com/GadgetVideoPodcastPlayerWeb/verification}{here}. This tool will display your video exactly in the same way as it will appear on ScienceDirect.).
 
+  
   
   
   
