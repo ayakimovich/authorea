@@ -41,21 +41,21 @@ In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/j
 
 \verb|tic()|
 
-\verb|img = imread("http://matlabcompat.github.io/img/example.tif"); \# read the remote image|
+\verb|img = imread("http://matlabcompat.github.io/img/example.tif"); # read the remote image|
 
-\verb|threshold = graythresh(img); \# compute graysacale threshold using Otsu algorithm|
+\verb|threshold = graythresh(img); # compute graysacale threshold using Otsu algorithm|
 
-\verb|imgbw = im2bw(img, threshold); \# create a binary image based on the grayscale image|
+\verb|imgbw = im2bw(img, threshold); # create a binary image based on the grayscale image|
 
-\verb|imshow(imgbw); \# display the resulting binary image|
+\verb|imshow(imgbw); # display the resulting binary image|
 
-\verb|labledbw = bwlabel(imgbw, 4); \# lable each connected object in the image|
+\verb|labledbw = bwlabel(imgbw, 4); # lable each connected object in the image|
 
-\verb|numberOfCells = max(reshape(labledbw, 1,numel(labledbw))); \# count cells|
+\verb|numberOfCells = max(reshape(labledbw, 1,numel(labledbw))); # count cells|
 
 \verb|disp(strcat("number of objects:", num2str(numberOfCells)));|
 
-\verb|imshow(label2rgb(labledbw))\# display the number of objects|
+\verb|imshow(label2rgb(labledbw))# display the number of objects|
 
 \verb|toc()|
 
@@ -77,6 +77,7 @@ The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.
     \caption{Table 1. Julia to MATLAB Performance Tests Comparison}
 \end{table}
 
+  
   
   
   
