@@ -7,19 +7,33 @@ To demonstrate the functionalities of the MatlbaCompat.jl library we have create
 
 \verb|tic()|
 
-\verb|img = imread('http://matlabcompat.github.io/img/example.tif'); % read the remote image|
+\verb|% read the remote image|
 
-\verb|threshold = graythresh(img); % compute graysacale threshold using Otsu algorithm|
+\verb|img = imread('http://matlabcompat.github.io/img/example.tif');|
 
-\verb|imgbw = im2bw(img, threshold); % create a binary image based on the grayscale image|
+\verb|% compute graysacale threshold using Otsu algorithm|
 
-\verb|imshow(imgbw); % display the resulting binary image|
+\verb|threshold = graythresh(img);|
 
-\verb|labeledbw = bwlabel(imgbw, 4); % lable each connected object in the image|
+\verb|% create a binary image based on the grayscale image|
 
-\verb|numberOfCells = max(reshape(labeledbw, 1,numel(labeledbw))); % count cells|
+\verb|imgbw = im2bw(img, threshold);|
 
-\verb|disp(strcat('number of objects:', num2str(numberOfCells)));% display the number of objects|
+\verb|% display the resulting binary image|
+
+\verb|imshow(imgbw);|
+
+\verb|% lable each connected object in the image|
+
+\verb|labeledbw = bwlabel(imgbw, 4);|
+
+\verb|% count cells|
+
+\verb|numberOfCells = max(reshape(labeledbw, 1,numel(labeledbw)));|
+
+\verb|% display the number of objects|
+
+\verb|disp(strcat('number of objects:', num2str(numberOfCells)));|
 
 \verb|imshow(label2rgb(labeledbw))|
 
@@ -41,21 +55,35 @@ In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/j
 
 \verb|tic()|
 
-\verb|img = imread("http://matlabcompat.github.io/img/example.tif"); # read the remote image|
+\verb|# read the remote image|
 
-\verb|threshold = graythresh(img); # compute graysacale threshold using Otsu algorithm|
+\verb|img = imread("http://matlabcompat.github.io/img/example.tif");|
 
-\verb|imgbw = im2bw(img, threshold); # create a binary image based on the grayscale image|
+\verb|# compute graysacale threshold using Otsu algorithm|
 
-\verb|imshow(imgbw); # display the resulting binary image|
+\verb|threshold = graythresh(img);|
 
-\verb|labledbw = bwlabel(imgbw, 4); # lable each connected object in the image|
+\verb|# create a binary image based on the grayscale image|
 
-\verb|numberOfCells = max(reshape(labledbw, 1,numel(labledbw))); # count cells|
+\verb|imgbw = im2bw(img, threshold);|
+
+\verb|# display the resulting binary image|
+
+\verb|imshow(imgbw);|
+
+\verb|# lable each connected object in the image|
+
+\verb|labledbw = bwlabel(imgbw, 4);|
+
+\verb|# count cells|
+
+\verb|numberOfCells = max(reshape(labledbw, 1,numel(labledbw)));|
 
 \verb|disp(strcat("number of objects:", num2str(numberOfCells)));|
 
-\verb|imshow(label2rgb(labledbw))# display the number of objects|
+\verb|# display the number of objects|
+
+\verb|imshow(label2rgb(labledbw))|
 
 \verb|toc()|
 
@@ -64,19 +92,28 @@ Arguably, one of the most attractive features Julia may provide for the research
 The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.00GHz CPU with 1TB of 1067MHz DDR3 RAM, running Linux in single core execution. In our case the test environment was Intel® Core\textsuperscript{TM} i7-4790K CPU E7-8850 4.00GHz (8 CPUs) CPU with 16GB of 1600MHz DDR3 RAM, running Windows 8.1 Pro 64-bit (6.3, Build 9600) without restriction to a single core. Results (\textbf{Tab. 1}) suggest small differences in execution time. The differences are most pronounced for Julia's most efficient Fibonacci Recursion (fib). This can be attributed to the difference in test settings and the version of the language. Despite the small differences, we were able to faithfully reproduce the pattern and the orders of magnitudes of the published results. Surprisingly MATLAB\textsuperscript{TM} R2015a performed slightly slower than R2014a in our test environment.
 
 \begin{table} 
-    \begin{tabular}{ c c c c }
-         & Reported MATLAB\textsuperscript{TM} 2014a (Folds Julia 0.3.7) & Tested MATLAB\textsuperscript{TM} 2014a (Folds Julia 0.3.10) & Tested MATLAB 2015a (Folds Julia 0.3.10) \\ 
+    \begin{tabular}{llll}
+    \hline
+        Algorithm & Reported MATLAB\textsuperscript{TM} 2014a (Folds Julia 0.3.7) & Tested MATLAB\textsuperscript{TM} 2014a (Folds Julia 0.3.10) & Tested MATLAB 2015a (Folds Julia 0.3.10) \\
+        \hline
         fib & 1989.78 & 1032.79 & 1101.73 \\ 
+        \hline
         parse\_int & 971.90 & 350.81 & 408.64 \\ 
+        \hline
         mandel & 46.17 & 47.69 & 47.62 \\ 
+        \hline
         quicksort & 69.07 & 47.28 & 57.80 \\ 
+        \hline
         pi\_sum & 1.28 & 1.09 & 1.10 \\ 
+        \hline
         rand\_mat\_stat & 5.64 & 1.41 & 3.91 \\ 
+        \hline
         rand\_mat\_mul & 1.03 & 2.84 & 2.86 \\ 
     \end{tabular}
     \caption{Table 1. Julia to MATLAB Performance Tests Comparison}
 \end{table}
 
+  
   
   
   
