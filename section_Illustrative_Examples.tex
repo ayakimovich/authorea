@@ -104,7 +104,7 @@ Arguably, one of the most attractive features Julia may provide for the research
 The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.00GHz CPU with 1TB of 1067MHz DDR3 RAM, running Linux in single core execution. In our case the test environment was Intel® Core\textsuperscript{TM} i7-4790K CPU E7-8850 4.00GHz (8 CPUs) CPU with 16GB of 1600MHz DDR3 RAM, running Windows 8.1 Pro 64-bit (6.3, Build 9600) without restriction to a single core. Results (\textbf{Tab. 1}) suggest small differences in execution time. The differences are most pronounced for Julia's most efficient Fibonacci Recursion (fib). This can be attributed to the difference in test settings and the version of the language. Despite the small differences, we were able to faithfully reproduce the pattern and the orders of magnitudes of the published results. Surprisingly MATLAB\textsuperscript{TM} R2015a performed slightly slower than R2014a in our test environment.
 
 \begin{table} 
-    \begin{tabular}{ CCCC }
+    \begin{tabular}{cccc}
     \hline
         \textbf{Algorithm} & \textbf{Reported MATLAB\textsuperscript{TM} 2014a (Folds Julia 0.3.7)} & \textbf{Tested MATLAB\textsuperscript{TM} 2014a (Folds Julia 0.3.10)} & \textbf{Tested MATLAB 2015a (Folds Julia 0.3.10)} \\
         \hline
@@ -125,6 +125,8 @@ The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.
     \caption{Julia to MATLAB Performance Tests Comparison}
 \end{table}
 
+  
+  
   
   
   
