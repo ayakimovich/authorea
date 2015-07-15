@@ -8,4 +8,4 @@ figures/fig3_janus_output/fig3_janus_output.png
 sectionImpact_label.tex
 sectionConclusions_l.tex
 sectionAcknowledgeme.tex
-section_Required_Metadata_label_section__.tex
+Required_Metadata.tex
