@@ -7,9 +7,3 @@ We have developed MatlabCompat.jl - a Julia package aimed to assist conversion o
 We were able to reproduce performance comparison tests published on the \href{http://julialang.org/benchmarks/}{official website of Julia} within the order of magnitude of execution time. While our test environment was different, we argue that it was closer to the "out-of-the-box" user experience on a modern desktop computer. Furthermore, we believe it was important to reconfirm the performance test results in a slightly different (potentially less optimized) environment to show the stability and reproducibility of those results. However, these test results suggest a word of caution: not every type of code converted from Matlab/Octave will be faster in Julia compared to MATLAB\textsuperscript{TM}. Highly optimized and vectorized MATLAB\textsuperscript{TM} performs comparably to Julia for some algorithms. Nonethels, in algorithms using for-loops, e.g. Fibonacci recursion, Julia performs three orders of magnitude faster.
 
 Altogether, this suggests that converting Matlab/Octave code to Julia can significantly improve performance or research software. MatlabCompat.jl can assist in that. We invite the community to help further develop MatlabCompat.jl, which can ultimately improve the functionality and performance of the research software.
-  
-  
-  
-  
-  
-  
