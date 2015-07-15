@@ -6,6 +6,6 @@ figures/fig2_library_scheme/fig2_library_scheme.png
 section_Illustrative_Examples.tex
 figures/fig3_janus_output/fig3_janus_output.png
 sectionImpact_label.tex
-sectionConclusions_l.tex
+Conclusions.tex
 sectionAcknowledgeme.tex
 Required_Metadata.tex
