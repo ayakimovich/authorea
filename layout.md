@@ -7,5 +7,5 @@ Illustrative_Examples.tex
 figures/fig3_janus_output/fig3_janus_output.png
 Impact.tex
 Conclusions.tex
-sectionAcknowledgeme.tex
+Acknowledgements.tex
 Required_Metadata.tex
