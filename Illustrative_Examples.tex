@@ -42,17 +42,17 @@ To demonstrate the functionalities of the MatlbaCompat.jl library we have create
 
 
 
-To ensure that the same program can be understood by Julia using \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package either a parsing step or minimal changes to the code are necessary. These changes include basic syntax adaptation like substitution of single quotes symbol (') by double quotes ("), substitution of commentary symbol percent (\%) by hash (\#) and addition of the lines initiating packages used including at least MatlabCompat. This is basic parsing is provided by the function \textit{"rossetta()"}, like in the example below (identical to the example mentioned above):\\
+To ensure that the same program can be understood by Julia using \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package either a parsing step or minimal changes to the code are necessary. These changes include basic syntax adaptation like substitution of single quotes symbol (') by double quotes ("), substitution of commentary symbol percent (\%) by hash (\#) and addition of the lines initiating packages used including at least MatlabCompat. This is basic parsing is provided by the function \textit{"rosetta()"}, like in the example below (identical to the example mentioned above):\\
 
 
 
 \verb|using MatlabCompat|
 
-\verb|rossetta(janus.m, janus.jl)|\\
+\verb|rosetta(janus.m, janus.jl)|\\
 
 
 
-In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.m} the function \textit{"rossetta()"} generates immediately Julia interpretable code (see \textbf{Fig. 3B} for output in Julia 0.3.10):\\
+In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.m} the function \textit{"rosetta()"} generates immediately Julia interpretable code (see \textbf{Fig. 3B} for output in Julia 0.3.10):\\
 
 
 
@@ -126,4 +126,5 @@ The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.
     \end{tabular}
     \caption{Julia to MATLAB Performance Tests Comparison}
 \end{table}
+  
   
