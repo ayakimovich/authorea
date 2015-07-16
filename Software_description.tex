@@ -3,7 +3,7 @@
 
 \textbf{Describe the software in as much as is necessary to establish a vocabulary needed to explain its impact. }
 
-\href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} is a Julia language package that helps converting your code in Matlab/Octave into Julia. Much like Julia language itself \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} is fully Github based and a work in progress inviting everyone to collaborate. It is set up as a Github organization, which is open for new members and the library source code is open for Github based pull requests. The longterm goal of the library is to allow effortless compatibility of Matlab/Octave research code to Julia.
+\href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} is a Julia language package that helps converting your code in Matlab/Octave into Julia. Much like Julia language itself \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} is fully Github based and a work in progress inviting everyone to collaborate. It is set up as a \href{https://github.com/MatlabCompat}{Github organization}, which is open for new members and the library source code is open for Github based pull requests. The longterm goal of the library is to allow effortless compatibility of Matlab/Octave research code to Julia.
 
 A typical code conversion strategies for a high level programming languages involve either translation/adaptation of the syntax of the source language to the syntax of the destination (object) language \cite{Ledley_1962} or usage of the library translating the code of the source language "as is" in the environment of the destination language (\textbf{Fig. 1}). While first strategy is always available for a developer, \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} makes the second strategies possible yet not exclusive.
 
@@ -43,6 +43,7 @@ An example of functionality provided by the \href{https://github.com/MatlabCompa
 
 \verb|rossetta(janus.m, janus.jl)|\\
 
-One can test the functionality of this code using the minimalistic \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.jl} program discussed below. Unless currently in development, all the functions provided by the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package have a \href{https://github.com/MatlabCompat/MatlabCompat.jl/tree/master/test}{respective test programs} that exercise all the main features of the package for automated testing. Functionality of the whole package is continuously automatically tested using \href{https://travis-ci.org/MatlabCompat/MatlabCompat.jl}{Travis Continuouse Integrations} service.
+One can test the functionality of this code using the minimalistic \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/dev/test/janus.m}{janus.jl} program discussed below. Unless currently in development, all the functions provided by the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package have a \href{https://github.com/MatlabCompat/MatlabCompat.jl/tree/master/test}{respective test programs} that exercise all the main features of the package for automated testing. Functionality of the whole package is continuously automatically tested using \href{https://travis-ci.org/MatlabCompat/MatlabCompat.jl}{Travis Continuouse Integrations} (CI) service.
+  
   
   
