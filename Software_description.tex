@@ -24,7 +24,7 @@ The namespace conflicts between Julia and Matlab/Octave are partially inevitable
 \verb|3|\\
 
 
-\href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} follows a rather simple modules organization convention. Namely, all the modules are name with function purposes based self-explanatory names in \textit{"CamelCase"} with capitalized first letter. Modules may contained submodules if necessary. All functions modules contain should be either aliases (wrappers) or re-implementations of Matlab/Octave functions named the same way. The only module representing an exception in this case is module \textit{"Support"}, which contains functions, not having an analogue neither in Matlab/Octave nor in Julia languages, necessary for other functions in the package.
+\href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} follows a rather simple modules organization convention. Namely, all the modules are named with function purposes based self-explanatory names in \textit{"CamelCase"} with capitalized first letter. Modules may contained submodules if necessary. All functions modules contain should be either aliases (wrappers) or re-implementations of Matlab/Octave functions named the same way. The only module representing an exception in this case is module \textit{"Support"}, which contains helper-functions, not having an analogue neither in Matlab/Octave nor in Julia languages, necessary for other functions in the package.
 
 \subsection{Software Functionalities}
 
@@ -32,12 +32,13 @@ Currently the major functionalities of the \href{https://github.com/MatlabCompat
 
 \subsection{Sample code snippets analysis}
 
-An example of functionality provided by the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package standing out, but worth mentioning is covered by function \textit{rossetta()} (\textit{"Support" module}). This function is aimed to be used as the entry point for Matlab/Octave-to-Julia conversion of your code. It is aimed to parse m-files (first argument) making basic syntax changes required for the code compatibility to Julia and then save the jl-file (second argument) to the specified path:\\
+An example of functionality provided by the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package standing out, but worth mentioning is covered by function \textit{rossetta()} (\textit{"Support" module}). This function is aimed to be used as the starting point for Matlab/Octave-to-Julia conversion of your code. It is aimed to parse m-files (first argument) making basic syntax changes required for the code compatibility to Julia and then save the jl-file (second argument) to the specified path:\\
 
 \verb|using MatlabCompat|
 
 \verb|rossetta(janus.m, janus.jl)|\\
 
 One can test the functionality of this code using the minimalistic \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/test/janus.jl}{janus.jl} program discussed below. Unless currently in development, all the functions provided by the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} package have a \href{https://github.com/MatlabCompat/MatlabCompat.jl/tree/master/test}{respective test programs} that exercise all the main features of the package for automated testing. Functionality of the whole package is continuously automatically tested using \href{https://travis-ci.org/MatlabCompat/MatlabCompat.jl}{Travis Continuouse Integrations} (CI) service.
+  
   
   
