@@ -36,7 +36,7 @@ To demonstrate the functionalities of the MatlbaCompat.jl library we have create
 
 \verb|disp(strcat('number of objects:', num2str(numberOfCells)));|
 
-\verb|imshow(label2rgb(labeledbw))|
+\verb|imshow(label2rgb(labeledbw,'jet',[0 0 0],'shuffle'));|
 
 \verb|toc()|\\
 
@@ -58,9 +58,9 @@ In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/tes
 
 \verb|using MatlabCompat|
 
-\verb|using MatlabCompat.ImageTools|
+\verb|importall MatlabCompat.ImageTools|
 
-\verb|using MatlabCompat.MathTools|
+\verb|importall MatlabCompat.MathTools|
 
 \verb|tic()|
 
@@ -82,17 +82,17 @@ In case of \href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/tes
 
 \verb|# lable each connected object in the image|
 
-\verb|labledbw = bwlabel(imgbw, 4);|
+\verb|labeledbw = bwlabel(imgbw, 4);|
 
 \verb|# count cells|
 
-\verb|numberOfCells = max(reshape(labledbw, 1,numel(labledbw)));|
+\verb|numberOfCells = max(reshape(labeledbw, 1,numel(labeledbw)));|
 
 \verb|disp(strcat("number of objects:", num2str(numberOfCells)));|
 
 \verb|# display the number of objects|
 
-\verb|imshow(label2rgb(labledbw))|
+\verb|imshow(label2rgb(labeledbw,"jet",[1 1 1],"shuffle"));|
 
 \verb|toc()|\\
 
@@ -128,4 +128,5 @@ The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.
 \end{table}\\
   
 We have next compared the execution times of our model image analysis program identical to "janus.m" and "janus.jl". Median results of 1000 iterations in the test environment mentioned above suggested that MATLAB\textsuperscript{TM} R2014a performed 0.29 folds of Julia 3.10 and R2015a 0.30 folds of Julia 3.10. We concluded that performance of Julia and MATLAB\textsuperscript{TM} was comparable for this specific case. This may be caused by the fact that MATLAB\textsuperscript{TM} is highly optimized for vector operations used in this program.
+  
   
