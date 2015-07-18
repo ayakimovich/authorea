@@ -2,7 +2,7 @@
 
 \textbf{Provide at least one illustrative example to demonstrate the major functions.}
 
-To demonstrate the functionalities of the MatlbaCompat.jl library we have created \textit{\textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/test/janus.m}{janus.m}}} - a minimalistic image analysis program in Matlab/Octave. First, the program is reading a remote image - a micrograph of cultured cells, stained with a nuclear stain (A549 human lung carcinoma cells stained with Hoechst 33342 dye from a dataset used it \cite{22787215}). Next the program is using Otsu \cite{otsu1975threshold} thresholding to segment (separate) bright foreground pixels from dark background pixels. Finally, the program counts connected components in the foreground pixels, which in an idealistic case is equal to the number of cellular nuclei in the picture. \textbf{Fig. 3A} shows MATLAB\textsuperscript{TM} R2014a output upon invoking \textit{janus.m}. Code listing for \textit{janus.m} together with commentaries (separated by the symbol "\%" in Matlab/Octave) is provided bellow:\\
+To demonstrate the functionalities of the MatlbaCompat.jl library we have created \textit{\textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/test/janus.m}{janus.m}}} - a minimalistic image analysis program in Matlab/Octave (see \textbf{supplementary video S1}). First, the program is reading a remote image - a micrograph of cultured cells, stained with a nuclear stain (A549 human lung carcinoma cells stained with Hoechst 33342 dye from a dataset used it \cite{22787215}). Next the program is using Otsu \cite{otsu1975threshold} thresholding to segment (separate) bright foreground pixels from dark background pixels. Finally, the program counts connected components in the foreground pixels, which in an idealistic case is equal to the number of cellular nuclei in the picture. \textbf{Fig. 3A} shows MATLAB\textsuperscript{TM} R2014a output upon invoking \textit{janus.m}. Code listing for \textit{janus.m} together with commentaries (separated by the symbol "\%" in Matlab/Octave) is provided bellow:\\
 
 
 
@@ -128,6 +128,7 @@ The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.
 \end{table}\\
   
 We have next compared the execution times of our model image analysis program identical to \textit{"janus.m"} and \textit{"janus.jl"}. Median results of 1000 iterations in the test environment mentioned above suggested that MATLAB\textsuperscript{TM} R2014a performed 0.29 folds of Julia 3.10 and R2015a 0.30 folds of Julia 3.10. We concluded that performance of Julia and MATLAB\textsuperscript{TM} was comparable for this specific case. This may be caused by the fact that MATLAB\textsuperscript{TM} is highly optimized for vector operations used in this program.
+  
   
   
   
