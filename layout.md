@@ -1,7 +1,6 @@
 abstract.tex
 Motivation_and_significance.tex
 Software_description.tex
-figures/fig1_conversion_strategy1/fig1_conversion_strategy1.png
 figures/fig2_library_scheme/fig2_library_scheme.png
 Illustrative_Examples.tex
 figures/fig3_janus_output/fig3_janus_output.png
