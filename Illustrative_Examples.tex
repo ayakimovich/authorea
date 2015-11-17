@@ -99,11 +99,17 @@ To show how similarly simplistic microprogram, which can be readily automaticall
 
 \verb|% read the remote images|
 
-\verb|imgTreated = imread('http://matlabcompat.github.io/img/example_Treated.tif');|
+\verb|imgTreated = imread('http://matlabcompat.github.io/img/|
 
-\verb|imgNonTreated = imread('http://matlabcompat.github.io/img/example_NonTreated.tif');|
+\verb|example_Treated.tif');|
 
-\verb|% compute grayscale threshold of the non treated image using Otsu algorithm|
+\verb|imgNonTreated = imread('http://matlabcompat.github.io/|
+
+\verb|img/example_NonTreated.tif');|
+
+\verb|% compute grayscale threshold of the non treated image|
+
+\verb|% using Otsu algorithm|
 
 \verb|threshold = graythresh(imgNonTreated);|
 
@@ -113,15 +119,25 @@ To show how similarly simplistic microprogram, which can be readily automaticall
 
 \verb|imgBWNonTreated = im2bw(imgNonTreated, threshold);|
 
-\verb|% count foreground pixels for each image and output it in console|
+\verb|% count foreground pixels for each image and output it|
 
-\verb|foregroundPixelCountTreated = sum(reshape(imgBWTreated, 1,numel(imgBWTreated)));|
+\verb|% in console|
 
-\verb|foregroundPixelCountNonTreated =  sum(reshape(imgBWNonTreated, 1,numel(imgBWNonTreated)));|
+\verb|foregroundPixelCountTreated = sum(reshape(imgBWTreated,|
 
-\verb|display(strcat('Foreground pixel count for Treated | \verb|specimen: ',num2str(foregroundPixelCountTreated)))|
+\verb| 1,numel(imgBWTreated)));|
 
-\verb|display(strcat('Foreground pixel count for Non-Treated | \verb|specimen: ',num2str(foregroundPixelCountNonTreated)))|\\
+\verb|foregroundPixelCountNonTreated =  sum(reshape(|
+
+\verb|imgBWNonTreated, 1,numel(imgBWNonTreated)));|
+
+\verb|display(strcat('Foreground pixel count for Treated |
+
+\verb|specimen: ',num2str(foregroundPixelCountTreated)))|
+
+\verb|display(strcat('Foreground pixel count for Non-Treated|
+
+\verb|specimen: ',num2str(foregroundPixelCountNonTreated)))|\\
 
 
 Next, similarly to the previous example, we invoked \textit{"rosetta()"} function on the \textit{\href{http://}{janus2.m}} to automatically translate it to Julia language, yielding \textit{\textit{\href{http://}{janus2.jl}}}:
@@ -135,11 +151,17 @@ Next, similarly to the previous example, we invoked \textit{"rosetta()"} functio
 
 \verb|# read the remote images|
 
-\verb|imgTreated = imread("http://matlabcompat.github.io/img/example_Treated.tif");|
+\verb|imgTreated = imread("http://matlabcompat.github.io/|
 
-\verb|imgNonTreated = imread("http://matlabcompat.github.io/img/example_NonTreated.tif");|
+\verb|img/example_Treated.tif");|
 
-\verb|# compute grayscale threshold of the non treated image using Otsu algorithm|
+\verb|imgNonTreated = imread("http://matlabcompat.github.io/|
+
+\verb|img/example_NonTreated.tif");|
+
+\verb|# compute grayscale threshold of the non treated image|
+
+\verb|# using Otsu algorithm|
 
 \verb|threshold = graythresh(imgNonTreated);|
 
@@ -149,17 +171,25 @@ Next, similarly to the previous example, we invoked \textit{"rosetta()"} functio
 
 \verb|imgBWNonTreated = im2bw(imgNonTreated, threshold);|
 
-\verb|# count foreground pixels for each image and output it in console|
+\verb|# count foreground pixels for each image and output it|
 
-\verb|foregroundPixelCountTreated = sum(reshape(imgBWTreated, 1,numel(imgBWTreated)));|
+\verb|# in console|
 
-\verb|foregroundPixelCountNonTreated =  sum(reshape(imgBWNonTreated, 1,numel(imgBWNonTreated)));|
+\verb|foregroundPixelCountTreated = sum(reshape(imgBWTreated,|
+
+\verb| 1,numel(imgBWTreated)));|
+
+\verb|foregroundPixelCountNonTreated =  sum(reshape(imgBWNonTreated,|
+
+\verb| 1,numel(imgBWNonTreated)));|
 
 \verb|display(strcat("Foreground pixel count for Treated|
-    \verb|specimen: ",num2str(foregroundPixelCountTreated)))|
+
+\verb|specimen: ",num2str(foregroundPixelCountTreated)))|
 
 \verb|display(strcat("Foreground pixel count for Non-Treated|
-    \verb|specimen: ",num2str(foregroundPixelCountNonTreated)))|\\
+
+\verb|specimen: ",num2str(foregroundPixelCountNonTreated)))|\\
 
 
 Both programs gave identical fluorescence micrographs quantification results shown in \textbf{Fig. 3D}, suggesting that, as expected by the design of this published study \cite{Moy_2009}, the worm death was lower in the case of treatment with control inhibitor of \textit{E. faecalis} bacterial infection related worm death compared to the mock control. Altogether, these examples suggest, that in the specific case of MATLAB/Octave to Julia conversion, results, readily applicable to complex research questions, can be achieved rather quickly. While, as discussed before, this might not work equally well in every case, this conversion may give better results with further development of the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} by its community.
@@ -190,7 +220,7 @@ The test environment in the published results was: Intel® Xeon® CPU E7-8850 2.
         \hline
 
     \end{tabular}
-    \caption{\textbf{Julia to MATLAB Performance Tests Comparison Measured by Specific Algorithm Execution Time in our Test Environment \textsuperscript{3}.} The Specific Algorithms included Fibonacci recursion (fib), parse an int from a string (parse\_int), Mandelbrot set (mandel), Quicksort sorting algorithm (quicksort), Slow \pi -series (pi\_sum), Random matrix statistics (rand\_mat\_stat), Random number matrix generation multiplication (rand\_mat\_mul). Source code for the performance tests were taken from the Julia community as is. The respective implementations are available on Github for \href{https://github.com/JuliaLang/julia/blob/master/test/perf/micro/perf.jl}{Julia} and \href{https://github.com/JuliaLang/julia/blob/master/test/perf/micro/perf.m}{MATLAB/Octave}. \\ \\
+    \caption{\textbf{Julia to MATLAB Performance Tests Comparison Measured by Specific Algorithm Execution Time in our Test Environment \textsuperscript{3}.} The Specific Algorithms included Fibonacci recursion (fib), parse an int from a string (parse\_int), Mandelbrot set (mandel), Quicksort sorting algorithm (quicksort), Slow \pi -series (pi\_sum), Random matrix statistics (rand\_mat\_stat), Random number matrix generation multiplication (rand\_mat\_mul). Source code for the performance tests were taken from the Julia community as is. The respective implementations are available on Github for \href{https://github.com/JuliaLang/julia/blob/master/test/perf/micro/perf.jl}{Julia} and \href{https://github.com/JuliaLang/julia/blob/master/test/perf/micro/perf.m}{MATLAB/Octave}. \\
     \textsuperscript{1}Performance of MATLAB\textsuperscript{TM} (measured as execution time in the test
         environment specified) folds performance of Julia 0.3.7} \\
     \textsuperscript{2}Performance of MATLAB\textsuperscript{TM} folds performance of Julia 0.3.10 \\
