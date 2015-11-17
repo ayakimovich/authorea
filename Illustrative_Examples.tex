@@ -95,6 +95,69 @@ In case of \textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/ma
 \verb|toc()|\\
 
 
+To show how similarly simplistic microprogram, which can be readily automatically translated from MATLAB/Octave to Julia , can be used to address a research question in a different scientific filed we have used another \href{http://www.broadinstitute.org/bbbc/BBBC010/}{published dataset} of an image-based screen performed for roundworm \textit{Caenorhabditis elegans} model organism \cite{Moy_2009}. The authors of that screen aimed to look for novel small compounds inhibiting \textit{Enterococcus faecalis} bacterial infection. Their readout was fluorescence signal of SYTOX Orange dye staining specifically dead worms, while living worms remained impermeable to that dye - thus emitting little or no fluorescent signal. Death of the experimental \textit{C. elegans} worms in that study was attributed to \textit{E. faecalis} bacterial infection (\textbf{Fig. 3C}). For illustration purposes, of how a simple MATLAB/Octave or Julia programs can measure such a readout we have first created the \textit{\href{http://}{janus2.m}} MATLAB/Octave program counting foreground pixels from a fluorescence micrograph (\textbf{Fig. 3D}): 
+
+\verb|% read the remote images|
+
+\verb|imgTreated = imread('http://matlabcompat.github.io/img/example_Treated.tif');|
+
+\verb|imgNonTreated = imread('http://matlabcompat.github.io/img/example_NonTreated.tif');|
+
+\verb|threshold = graythresh(imgNonTreated); % compute grayscale threshold of the non treated image using Otsu algorithm|
+
+\verb|% create a binary image based on the grayscale images|
+
+\verb|imgBWTreated = im2bw(imgTreated, threshold);|
+
+\verb|imgBWNonTreated = im2bw(imgNonTreated, threshold);|
+
+\verb|% count foreground pixels for each image and output it in console|
+
+\verb|foregroundPixelCountTreated = sum(reshape(imgBWTreated, 1,numel(imgBWTreated)));|
+
+\verb|foregroundPixelCountNonTreated =  sum(reshape(imgBWNonTreated, 1,numel(imgBWNonTreated)));|
+
+\verb|display(strcat('Foreground pixel count for Treated specimen: ',num2str(foregroundPixelCountTreated)))|
+
+\verb|display(strcat('Foreground pixel count for Non-Treated specimen: ',num2str(foregroundPixelCountNonTreated)))|\\
+
+
+Next, similarly to the previous example, we invoked \textit{"rosetta()"} function on the \textit{\href{http://}{janus2.m}} to automatically translate it to Julia language, yielding \textit{\textit{\href{http://}{janus2.jl}}}:
+
+
+\verb|using MatlabCompat|
+
+\verb|importall MatlabCompat.ImageTools|
+
+\verb|importall MatlabCompat.MathTools|
+
+\verb|# read the remote images|
+
+\verb|imgTreated = imread("http://matlabcompat.github.io/img/example_Treated.tif");|
+
+\verb|imgNonTreated = imread("http://matlabcompat.github.io/img/example_NonTreated.tif");|
+
+\verb|threshold = graythresh(imgNonTreated); # compute grayscale threshold of the non treated image using Otsu algorithm|
+
+\verb|# create a binary image based on the grayscale images|
+
+\verb|imgBWTreated = im2bw(imgTreated, threshold);|
+
+\verb|imgBWNonTreated = im2bw(imgNonTreated, threshold);|
+
+\verb|# count foreground pixels for each image and output it in console|
+
+\verb|foregroundPixelCountTreated = sum(reshape(imgBWTreated, 1,numel(imgBWTreated)));|
+
+\verb|foregroundPixelCountNonTreated =  sum(reshape(imgBWNonTreated, 1,numel(imgBWNonTreated)));|
+
+\verb|display(strcat("Foreground pixel count for Treated specimen: ",num2str(foregroundPixelCountTreated)))|
+
+\verb|display(strcat("Foreground pixel count for Non-Treated specimen: ",num2str(foregroundPixelCountNonTreated)))|\\
+
+
+Both programs gave identical fluorescence micrographs quantification results shown in \textbf{Fig. 3D}, suggesting that, as expected by the design of this published study \cite{Moy_2009}, the worm death was lower in the case of treatment with control inhibitor of \textit{E. faecalis} bacterial infection related worm death compared to the mock control. Altogether, these examples suggest, that in the specific case of MATLAB/Octave to Julia conversion, results, readily applicable to complex research questions, can be achieved rather quickly. While, as discussed before, this might not work equally well in every case, this conversion may give better results with further development of the \href{https://github.com/MatlabCompat/MatlabCompat.jl}{MatlabCompat.jl} by its community.
+
 
 Arguably, one of the most attractive features Julia may provide for the research software is the potential for performance optimization. To challenge the results \href{http://julialang.org/benchmarks/}{published} on the official website of the language we have executed the published standard algorithms performance tests in slightly different environment for a new version of Julia (0.3.10) and two different versions of MATLAB\textsuperscript{TM} (R2014a and R2015a). The tests include Fibonacci recursion (fib), parse integers (parse\_int), Mandelbrot set: complex arithmetic and comprehensions (mandel), numeric vector sorting (quicksort), slow $\pi$ series (pi\_sum), random matrix statistics (rand\_mat\_stat), large random number generation and multiplication of random matrices (rand\_mat\_mul).
 
