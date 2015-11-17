@@ -5,6 +5,7 @@ figures/fig1_conversion_strategy1/fig1_conversion_strategy1.png
 figures/fig2_library_scheme/fig2_library_scheme.png
 Illustrative_Examples.tex
 figures/fig3_janus_output/fig3_janus_output.png
+figures/fig3_janus_output/fig3_janus_output.png
 Impact.tex
 Conclusions.tex
 Acknowledgements.tex
