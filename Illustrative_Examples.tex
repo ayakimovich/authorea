@@ -95,7 +95,7 @@ In case of \textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/ma
 \verb|toc()|\\
 
 
-To show how similarly simplistic microprogram, which can be readily automatically translated from MATLAB/Octave to Julia , can be used to address a research question in a different scientific field we have used another \href{http://www.broadinstitute.org/bbbc/BBBC010/}{published dataset} of an image-based screen performed for roundworm \textit{Caenorhabditis elegans} model organism \cite{Moy_2009}. The authors of that screen aimed to look for novel small compounds inhibiting \textit{Enterococcus faecalis} bacterial infection. Their readout was fluorescence signal of SYTOX Orange dye staining specifically dead worms, while living worms remained impermeable to that dye - thus emitting little or no fluorescent signal. Death of the experimental \textit{C. elegans} worms in that study was attributed to \textit{E. faecalis} bacterial infection (\textbf{Fig. 3C}). For illustration purposes, of how a simple MATLAB/Octave or Julia programs can measure such a readout we have first created the \textit{\href{http://}{janus2.m}} MATLAB/Octave program counting foreground pixels from a fluorescence micrograph (\textbf{Fig. 3D}): 
+To show how similarly simplistic microprogram, which can be readily automatically translated from MATLAB/Octave to Julia , can be used to address a research question in a different scientific field we have used another \href{http://www.broadinstitute.org/bbbc/BBBC010/}{published dataset} of an image-based screen performed for roundworm \textit{Caenorhabditis elegans} model organism \cite{Moy_2009}. The authors of that screen aimed to look for novel small compounds inhibiting \textit{Enterococcus faecalis} bacterial infection. Their readout was fluorescence signal of SYTOX Orange dye staining specifically dead worms, while living worms remained impermeable to that dye - thus emitting little or no fluorescent signal. Death of the experimental \textit{C. elegans} worms in that study was attributed to \textit{E. faecalis} bacterial infection (\textbf{Fig. 3C}). For illustration purposes, of how a simple MATLAB/Octave or Julia programs can measure such a readout we have first created the \textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/test/janus2.m}{janus2.m}} MATLAB/Octave program counting foreground pixels from a fluorescence micrograph (\textbf{Fig. 3D}): 
 
 \verb|% read the remote images|
 
@@ -140,7 +140,7 @@ To show how similarly simplistic microprogram, which can be readily automaticall
 \verb|specimen: ',num2str(foregroundPixelCountNonTreated)))|\\
 
 
-Next, similarly to the previous example, we invoked \textit{"rosetta()"} function on the \textit{\href{http://}{janus2.m}} to automatically translate it to Julia language, yielding \textit{\href{http://}{janus2.jl}}:
+Next, similarly to the previous example, we invoked \textit{"rosetta()"} function on the \textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/test/janus2.m}{janus2.m}} to automatically translate it to Julia language, yielding \textit{\href{https://github.com/MatlabCompat/MatlabCompat.jl/blob/master/test/janus2.jl}{janus2.jl}}:
 
 
 \verb|using MatlabCompat|
